@@ -19,10 +19,10 @@ public class Program {
 		System.out.print("Enter full file path: ");
 		String path = sc.nextLine();
 		
-		System.out.print("Enter salary: ");
-		double salary = sc.nextDouble();
-		
 		try (BufferedReader br = new BufferedReader(new FileReader(path))){
+			
+			System.out.print("Enter salary: ");
+			double salary = sc.nextDouble();
 			
 			List<Employee> list = new ArrayList<>();
 			
@@ -42,7 +42,7 @@ public class Program {
 			System.out.printf("Sum of salary of people whose name starts with 'M': %.2f", sum);
 			
 		} catch (Exception e) {
-			// TODO: handle exception
+			System.out.println(e.getMessage());
 		}finally {
 			sc.close();
 		}
